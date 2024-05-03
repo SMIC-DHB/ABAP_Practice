@@ -17,4 +17,24 @@ INTERFACE zif_demo_howard_unit_test
       RETURNING
         VALUE(is_leapyear) TYPE abap_bool.
 
+  METHODS
+    get_combined_amount
+      IMPORTING
+        VALUE(initial_amount) TYPE i
+        VALUE(date)           TYPE d
+      RETURNING
+        VALUE(result)         TYPE i.
+
+  METHODS:
+    discount_by_20
+      IMPORTING
+        VALUE(amount) TYPE i
+      RETURNING
+        VALUE(result) TYPE i,
+    discount_by_10
+      IMPORTING
+        VALUE(amount) TYPE i
+      RETURNING
+        VALUE(result) TYPE i.
+
 ENDINTERFACE.
