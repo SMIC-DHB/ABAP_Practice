@@ -35,12 +35,7 @@ CLASS zcl_demo_howard_unit_test IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD zif_demo_howard_unit_test~determine_if_leap_year.
-*    is_leapyear = COND #( WHEN ( year MOD 4 = 0 AND year MOD 100 <> 0 ) OR year MOD 400 = 0 THEN abap_true
-*                          ELSE abap_false ).
-
-    is_leapyear = COND #( WHEN year MOD 4 = 0 AND year MOD 100 <> 0 THEN abap_true
-                          WHEN year MOD 100 = 0 AND year MOD 400 = 0 THEN abap_true
-                          ELSE abap_false ).
+    is_leapyear = xsdbool( year MOD 4 = 0 AND year MOD 100 <> 0 OR year MOD 100 = 0 AND year MOD 400 = 0 ).
   ENDMETHOD.
 
   METHOD zif_demo_howard_unit_test~discount_by_10.
